@@ -7,12 +7,11 @@ import "./index.css"
 import cart from "../images/cart.svg"
 
 const Header = styled.header`
-	padding: 15px;
-	background: #4f4789;
+	padding: 20px 35px;
+	background: #ffffff;
 	display: grid;
-	grid-template-columns: 300px 1fr 300px;
+	grid-template-columns: 400px 1fr 400px;
 	align-items: center;
-	justify-items: center;
 `
 
 const NavContainer = styled.nav`
@@ -21,14 +20,15 @@ const NavContainer = styled.nav`
 	justify-content: space-around;
 
 	a {
-		color: #ffffff;
+		color: #333333;
 		text-decoration: none;
 	}
 `
 
 const CartButton = styled.div`
+	justify-self: end;
 	cursor: pointer;
-	height: 30px;
+	height: 25px;
 	width: auto;
 	position: relative;
 
@@ -57,6 +57,12 @@ const Layout = ({ children }) => {
 		<>
 			<div>
 				<Header>
+					<NavContainer>
+						<Link to="/blog">Blog</Link>
+						<Link to="/shop">Shop</Link>
+						<Link to="/podcast">Podcast</Link>
+						<Link to="/about">About</Link>
+					</NavContainer>
 					<div>
 						<Link to="/" style={{ textDecoration: "none" }}>
 							<h1
@@ -64,19 +70,13 @@ const Layout = ({ children }) => {
 									margin: "0",
 									padding: "0",
 									textAlign: "center",
-									color: "orange",
+									color: "darkred",
 								}}
 							>
 								Along the Seams
 							</h1>
 						</Link>
 					</div>
-					<NavContainer>
-						<Link to="/blog">Blog</Link>
-						<Link to="/shop">Shop</Link>
-						<Link to="/podcast">Podcast</Link>
-						<Link to="/about">About</Link>
-					</NavContainer>
 					<CartButton className="snipcart-checkout">
 						<img src={cart} alt="cart" />
 						{cartQuantity ? <CartQtyDisplay>{cartQuantity}</CartQtyDisplay> : ""}

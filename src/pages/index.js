@@ -1,31 +1,35 @@
 import React from "react"
-
 import Layout from "../components/layout"
+import styled from "styled-components"
 import SEO from "../components/seo"
-import { Link } from "gatsby"
+import baseballHero from "../images/bw-baseball.jpg"
+
+const Hero = styled.div`
+	height: 500px;
+	width: 100%;
+	background-image: url(${baseballHero});
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		margin-top: 100px;
+		text-align: center;
+		font-size: 64px;
+		color: #ffffff;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(0, 0, 0, 0.9);
+	}
+`
 
 const IndexPage = () => {
 	return (
 		<Layout>
 			<SEO title="Hello" />
-			<div
-				style={{
-					width: "100%",
-					height: "100vh",
-					display: "flex",
-					flexDirection: "column",
-					justifyContent: "center",
-					textAlign: "center",
-				}}
-			>
-				<h1>Along the Seams</h1>
-				<h2>~ A Baseball Blog ~</h2>
-				<h3>Coming soon.</h3>
-				<Link to="/blog">Blog</Link>
-				<Link to="/shop">Shop</Link>
-				<Link to="/podcast">Podcast</Link>
-				<Link to="/about">About</Link>
-			</div>
+			<Hero>
+				<h1>A baseball blog. And shop. And podcast.</h1>
+			</Hero>
 		</Layout>
 	)
 }

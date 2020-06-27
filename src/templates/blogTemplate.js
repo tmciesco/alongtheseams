@@ -34,6 +34,10 @@ const BlogDate = styled.p`
 
 const BlogContent = styled.div`
 	padding: 15px;
+
+	p {
+		font-size: 18px;
+	}
 `
 export default function Template({
 	data, // this prop will be injected by the GraphQL query below.
