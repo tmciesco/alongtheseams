@@ -23,6 +23,7 @@ module.exports = {
 		`gatsby-transformer-remark`,
 		`gatsby-transformer-sharp`,
 		`gatsby-source-printify`,
+		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-manifest`,
@@ -42,9 +43,10 @@ module.exports = {
 			},
 		},
 		{
-			resolve: "gatsby-plugin-snipcartv3",
+			resolve: "gatsby-plugin-snipcart-advanced",
 			options: {
-				apiKey: "ZDIyMTRjM2MtOTJmNi00Mjc5LWIyZTktM2IyOWYyMjM4ZjM5NjM3MjgzNjEzODY0OTgyNzg4",
+				apiKey: process.env.GATSBY_SNIPCART_API_KEY,
+				openCartOnAdd: false,
 			},
 		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
