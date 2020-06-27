@@ -8,7 +8,7 @@ collections:
   - name: blog
     label: Blog
     folder: blog
-    slug: "/blog/{{slug}}"
+    slug: "/blog/{{fields.slug}}"
     create: true
     fields:
       - { name: slug, label: Slug }
