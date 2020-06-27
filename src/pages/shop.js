@@ -27,30 +27,38 @@ const ShopPage = () => {
 			<SEO title="Shop" />
 			<h1>Shop Gatsby Page Works</h1>
 			{loading ? <h4>loading products...</h4> : ""}
-			{products.map((product) => {
-				return (
-					<div key={product.id}>
-						<h2>{product.title}</h2>
-						<button
-							className="snipcart-add-item"
-							data-item-id={product.id}
-							data-item-price={product.variants[0].price * 0.01}
-							data-item-url="/"
-							data-item-description={product.description}
-							data-item-image={product.images[0].src}
-							data-item-name={product.title}
-							data-item-custom1-name="Color"
-							data-item-custom1-options="Solid White|Solid Black|Heather Grey|Solid Red"
-							data-item-custom1-value="Solid Red"
-							data-item-custom2-name="Size"
-							data-item-custom2-options="XS|SM|MD|LG|XL|2XL"
-							data-item-custom2-value="MD"
-						>
-							Add to cart
-						</button>
-					</div>
-				)
-			})}
+			<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", justifyItems: "center" }}>
+				{products.map((product) => {
+					return (
+						<div key={product.id}>
+							<img
+								src={product.images[0].src}
+								alt={product.title}
+								style={{ height: "250px", width: "auto", margin: "0 auto", display: "block" }}
+							/>
+							<h2 style={{ textAlign: "center" }}>{product.title}</h2>
+							<button
+								style={{ margin: "0 auto", display: "block" }}
+								className="snipcart-add-item"
+								data-item-id={product.id}
+								data-item-price={product.variants[0].price * 0.01}
+								data-item-url="/"
+								data-item-description={product.description}
+								data-item-image={product.images[0].src}
+								data-item-name={product.title}
+								data-item-custom1-name="Color"
+								data-item-custom1-options="Solid White|Solid Black|Heather Grey|Solid Red"
+								data-item-custom1-value="Solid Red"
+								data-item-custom2-name="Size"
+								data-item-custom2-options="XS|SM|MD|LG|XL|2XL"
+								data-item-custom2-value="MD"
+							>
+								Add to cart
+							</button>
+						</div>
+					)
+				})}
+			</div>
 		</Layout>
 	)
 }

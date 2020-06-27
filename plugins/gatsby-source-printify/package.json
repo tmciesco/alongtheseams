@@ -1,0 +1,14 @@
+{
+	"name": "gatsby-source-printify",
+	"version": "0.1.0",
+	"description": "A Gatsby Source Plugin for the Printify API.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Troy Ciesco <tmciesco@gmail.com>",
+	"license": "ISC",
+	"dependencies": {
+		"gatsby-node-helpers": "^0.3.0"
+	}
+}
