@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import Layout from "../components/layout"
 
 const BlogPostContainer = styled.div`
 	.blog-post {
@@ -20,14 +21,16 @@ export default function Template({
 	const { markdownRemark } = data // data.markdownRemark holds your post data
 	const { frontmatter, html } = markdownRemark
 	return (
-		<BlogPostContainer>
-			<div className="blog-post">
-				<h1>{frontmatter.title}</h1>
-				<h2>{frontmatter.date}</h2>
-				<img src={frontmatter.thumbnail} alt={frontmatter.title} />
-				<div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
-			</div>
-		</BlogPostContainer>
+		<Layout>
+			<BlogPostContainer>
+				<div className="blog-post">
+					<h1>{frontmatter.title}</h1>
+					<h2>{frontmatter.date}</h2>
+					<img src={frontmatter.thumbnail} alt={frontmatter.title} />
+					<div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
+				</div>
+			</BlogPostContainer>
+		</Layout>
 	)
 }
 
