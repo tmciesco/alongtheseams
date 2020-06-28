@@ -1,3 +1,9 @@
+// Initialize dotenv
+require("dotenv").config({
+	//path: `.env.${process.env.NODE_ENV}`, // or '.env'
+	path: `.env`, // or '.env'
+})
+
 module.exports = {
 	siteMetadata: {
 		title: `Along the Seams`,
