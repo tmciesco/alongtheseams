@@ -35,6 +35,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 			}
 		}
 	`)
+
+	// const testProductQuery = await graphql(`
+	// 	{
+	// 		allMarkdownRemark(
+	// 			sort: { order: DESC, fields: [frontmatter___date] }
+	// 			limit: 1000
+	// 			frontmatter: { id: { eq: "6543" } }
+	// 		) {
+	// 			edges {
+	// 				node {
+	// 					id
+	// 					frontmatter {
+	// 						slug
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// `)
+
 	// Handle errors
 	if (result.errors) {
 		reporter.panicOnBuild(`Error while running GraphQL query.`)
@@ -56,5 +76,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 		path: `/shop`,
 		component: path.resolve("./src/templates/AllProductsTemplate.js"),
 		context: { products },
+	})
+
+	createPage({
+		path: `/test`,
+		component: path.resolve("./src/templates/TestSourceTemplate.js"),
 	})
 }
