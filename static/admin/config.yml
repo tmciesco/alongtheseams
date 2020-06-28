@@ -4,6 +4,7 @@ backend:
 
 media_folder: static/assets
 public_folder: /assets
+
 collections:
   - name: blog
     label: Blog
@@ -24,3 +25,27 @@ collections:
           config:
             multiple: false
       - { name: body, label: Body, widget: markdown }
+
+  - name: products
+    label: Products
+    folder: _data/products
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - { name: slug, label: Slug }
+      - { name: id, label: Product ID }
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: name, label: Product Name }
+      - { name: price, label: Price, widget: number, valueType: "float" }
+      - { name: description, label: Description, widget: text }
+      - { name: colors, label: Colors, hint: "delimit with |" }
+      - { name: sizes, label: Sizes, hint: "delimit with |" }
+      - label: Featured Image
+        name: thumbnail
+        widget: image
+        hint: "Image size 1280x800 works best :)"
+        required: false
+        media_library:
+          config:
+            multiple: false
