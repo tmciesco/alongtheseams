@@ -53,8 +53,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 	const products = await getProductData()
 
 	createPage({
-		path: `/products`,
-		component: path.resolve("./src/templates/productsTemplate.js"),
+		path: `/shop`,
+		component: path.resolve("./src/templates/ProductsTemplate.js"),
 		context: { products },
 	})
 }
