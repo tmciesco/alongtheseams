@@ -33,7 +33,8 @@ collections:
     create: true
     fields:
       - { name: slug, label: Slug }
-      - { name: id, label: Product ID }
+      - { name: productID, label: Product ID }
+      - { name: type, label: Type, widget: hidden, default: "product" }
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: name, label: Product Name }

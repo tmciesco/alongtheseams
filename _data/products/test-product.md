@@ -1,6 +1,7 @@
 ---
 slug: /products/test-product
-id: "6543"
+productID: "6543"
+type: product
 path: test-product
 date: 2020-06-28T19:28:59.102Z
 name: Test Product

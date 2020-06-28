@@ -1,5 +1,5 @@
 import React from "react"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -24,20 +24,21 @@ export default ({ data }) => {
 	)
 }
 
-// export const pageQuery = graphql`
-// 	{
-// 		allMarkdownRemark(frontmatter: { id: { eq: "6543" } }) {
-// 			edges {
-// 				node {
-// 					id
-// 					frontmatter {
-// 						id
-// 						slug
-// 						price
-// 						description
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// `
+export const pageQuery = graphql`
+	{
+		allMarkdownRemark(filter: { frontmatter: { type: { eq: "product" } } }) {
+			edges {
+				node {
+					id
+					frontmatter {
+						productID
+						type
+						slug
+						price
+						description
+					}
+				}
+			}
+		}
+	}
+`
