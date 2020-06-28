@@ -1,6 +1,6 @@
 ---
 slug: /products/test-product2
-productID: "436rfs4e6sry5s5"
+productID: 436rfs4e6sry5s5
 type: product
 path: test-product2
 date: 2020-06-28T21:18:04.361Z
