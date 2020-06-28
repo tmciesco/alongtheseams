@@ -7,7 +7,7 @@ export default ({ pageContext: { products } }) => {
 	return (
 		<Layout>
 			<SEO title="Shop" />
-			<h1>Shop Gatsby Page Works</h1>
+			<h1>Along the Seams Gear</h1>
 			<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", justifyItems: "center" }}>
 				{/* <div>
 					<h2 style={{ textAlign: "center" }}>Test</h2>
