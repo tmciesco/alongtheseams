@@ -78,8 +78,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 		context: { products },
 	})
 
+	console.log("shop created")
+
 	createPage({
 		path: `/test`,
 		component: path.resolve("./src/templates/TestSourceTemplate.js"),
 	})
+	console.log("test created")
 }
