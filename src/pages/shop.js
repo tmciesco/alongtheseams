@@ -42,7 +42,7 @@ const ShopPage = () => {
 								className="snipcart-add-item"
 								data-item-id={product.id}
 								data-item-price={product.variants[0].price * 0.01}
-								data-item-url="/"
+								data-item-url="https://friendly-pare-983e98.netlify.app/"
 								data-item-description={product.description}
 								data-item-image={product.images[0].src}
 								data-item-name={product.title}
