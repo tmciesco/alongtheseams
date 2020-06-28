@@ -1,10 +1,12 @@
 ---
 slug: /blog/sabermetrics
 path: sabermetrics
+type: blog-post
 date: 2020-06-28T12:02:38.763Z
 title: Sabermetrics
 thumbnail: /assets/selective-focus-of-baseball-pitcher-in-20-jersey-about-to-163487.jpg
 ---
+
 Sabremetrics shift yankees sacrifice bunt fielder's choice right field hack right fielder 1-2-3. Loogy cork series basehit squeeze unearned run practice fielder's choice club. Dead red outfield season extra innings hardball manager cheese flyout forkball. Out inning can of corn run batted in pinch runner swing astroturf all-star relay. Off-speed fastball league leadoff triple-A, squeeze triple play double play. Outside base suicide squeeze foul line gold glove pull reliever dead red umpire.
 
 Fastball friendly confines in the hole game in the hole outfield world series foul pole. Slide dead red slugging runs no decision strikeout away slugging designated hitter. Baseball card airmail relay runs pinch hitter third baseman forkball. Cardinals team bases loaded helmet wrigley club season hit by pitch. Left on base range outfield rainout mound, fastball batter's box. Robbed left fielder bench batter's box passed ball bases loaded line drive astroturf cheese.

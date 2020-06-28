@@ -89,11 +89,15 @@ export const pageQuery = graphql`
 				title
 			}
 		}
-		allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+		allMarkdownRemark(
+			filter: { frontmatter: { type: { eq: "blog-post" } } }
+			sort: { fields: [frontmatter___date], order: DESC }
+		) {
 			edges {
 				node {
 					frontmatter {
 						date(formatString: "MMMM DD, YYYY")
+						type
 						slug
 						title
 						thumbnail

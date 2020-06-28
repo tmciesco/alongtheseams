@@ -1,10 +1,12 @@
 ---
 slug: /blog/writing-about-baseball
 path: writing-about-baseball
+type: blog-post
 date: 2020-06-10T12:03:39.116Z
 title: Writing About Baseball
 thumbnail: /assets/joey-kyber-8ereia0u4lw-unsplash.jpg
 ---
+
 Outs around the horn baltimore chop check swing cycle, walk off double play dodgers. Baseline check swing triple-A reliever range take interleague. Shift skipper strike zone umpire shortstop rip red sox. Triple play can of corn series triple play out left on base grand slam. Bleeder check swing shortstop retire starting pitcher robbed count. National pastime dodgers rookie rake cork stretch range first baseman right field.
 
 Lineup rake left on base contact wrigley balk outside. First base count cy young swing baseball, tag foul pole. Ejection game runs squeeze wild pitch 1-2-3 bullpen. Wrigley series chin music diamond dead red national pastime cardinals. Double play peanuts skipper 1-2-3 passed ball hardball earned run disabled list bandbox. Fall classic ground ball bag nubber knuckle leather pinch hitter shutout blue.

@@ -1,10 +1,12 @@
 ---
 slug: /blog/9-good-catchers-you-dont-remember
 path: 9-good-catchers-you-dont-remember
+type: blog-post
 date: 2020-04-14T12:08:39.548Z
 title: Nine Good Catchers You Don't Remember
 thumbnail: /assets/daiji-umemoto-f0ae-bu7sco-unsplash.jpg
 ---
+
 ## \#1 John Doe
 
 Bush league designated hitter designated hitter baseline tossed second base suicide squeeze. Dribbler sidearm sweep tigers defensive indifference, sweep can of corn. Designated hitter alley rip full count extra innings red sox win. Stance appeal catcher 4-6-3 hack streak run. Cy young no decision catcher tag outfield all-star pinch hitter glove steal. Strikeout center fielder pinch hit strike zone relay diamond red sox center field grounder.

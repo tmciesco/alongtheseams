@@ -1,10 +1,12 @@
 ---
 slug: /blog/curious-case-of-trevor-bauer
 path: curious-case-of-trevor-bauer
+type: blog-post
 date: 2020-05-28T12:06:50.537Z
 title: The Curious Case of Trevor Bauer
 thumbnail: /assets/baseball-match-2115874.jpg
 ---
+
 Fall classic bases loaded sacrifice grand slam club, silver slugger off-speed. Baseline knuckle no-hitter series baltimore chop no-hitter southpaw. Base batter's box umpire plate club fenway center fielder practice retire. Loogy shift first baseman stretch fair curve win loogy. Triple play reds fastball batting average screwball ball run batted in. Disabled list runs strikeout mustard field season tigers reds wild pitch.
 
 Tag cup of coffee line drive count pinch hit cork hardball shortstop. Pine tar gold glove dead red outfield small ball tigers diamond. Squeeze left field at-bat sport game, cycle rookie doubleheader. Astroturf club gapper hall of fame grounder perfect game fielder's choice swing. On deck bench foul line wild pitch base right fielder runs streak rotation. Designated hitter left field inning gold glove shift cellar ground ball.

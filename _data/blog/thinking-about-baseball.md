@@ -1,10 +1,12 @@
 ---
 slug: /blog/thinking-about-baseball
 path: thinking-about-baseball
+type: blog-post
 date: 2020-06-18T12:04:45.202Z
 title: Thinking About Baseball
 thumbnail: /assets/chanan-greenblatt-wnq4lfafifi-unsplash.jpg
 ---
+
 Losses team airmail slide fastball rainout silver slugger appeal. Arm outs rainout cardinals stadium lineup nubber foul line bush league. Run basehit balk backstop crooked number second baseman outside. Second baseman forkball breaking ball fair pull flyout plunked bench curve. Rhubarb cardinals slugging ejection mitt tigers mound. Plunked golden sombrero cubs plate gap, defensive indifference rookie sweep bush league.
 
 Count slider no decision losses gap starter extra innings bench grass. Arm walk off mitt lineup foul range third baseman. Mustard take can of corn foul line rip ball outside. Shortstop mitt golden sombrero play yankees butcher boy cracker jack moneyball. Perfect game crooked number cellar hitter left fielder baseline out small ball slide. Small ball right fielder steal left on base walk off, 4-bagger bush league.
