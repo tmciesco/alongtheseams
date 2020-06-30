@@ -21,7 +21,7 @@ description: >-
   .: Tear away label
 
   .: Runs true to size
-colors: Vintage Heather
+colors: Vintage Heather|Blue
 sizes: XS|SM|MD|LG|XL
 thumbnail: /assets/ats-shirt.jpeg
 ---
