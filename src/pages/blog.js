@@ -48,7 +48,7 @@ const BlogPage = ({ data }) => {
 	const posts = data.allMarkdownRemark.edges
 	return (
 		<Layout>
-			<SEO title="Home" />
+			<SEO title="Blog" />
 			<BlogRollContainer>
 				{posts.map(({ node }) => {
 					const title = node.frontmatter.title || node.fields.slug

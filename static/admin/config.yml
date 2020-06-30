@@ -27,6 +27,28 @@ collections:
             multiple: false
       - { name: body, label: Body, widget: markdown }
 
+  - name: podcasts
+    label: Podcasts
+    folder: _data/podcasts
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - { name: slug, label: Slug }
+      - { name: path, label: Path }
+      - { name: type, label: Type, widget: hidden, default: "podcast" }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: description, label: Description, widget: text }
+      - label: Featured Image
+        name: thumbnail
+        widget: image
+        hint: "Image size 1280x800 works best :)"
+        required: false
+        media_library:
+          config:
+            multiple: false
+      - { name: body, label: Body, widget: markdown }
+
   - name: products
     label: Products
     folder: _data/products
