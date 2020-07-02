@@ -24,6 +24,7 @@ export default function Template({ data }) {
 	const [selectedColor, setSelectedColor] = useState("")
 	const [sizes, setSizes] = useState([])
 	const [selectedSize, setSelectedSize] = useState("")
+	const [qty, setQty] = useState(1)
 
 	useEffect(() => {
 		setColors(frontmatter.colors.split("|"))
@@ -36,6 +37,10 @@ export default function Template({ data }) {
 
 	const handleSizeChange = (event) => {
 		setSelectedSize(event.target.value)
+	}
+
+	const handleQtyChange = (event) => {
+		setQty(event.target.value)
 	}
 
 	return (
@@ -63,6 +68,15 @@ export default function Template({ data }) {
 							)
 						})}
 					</select>
+					<label htmlFor="qty">Qty</label>
+					<input
+						type="number"
+						aria-label="qty"
+						name="qty"
+						defaultValue={qty}
+						onBlur={handleQtyChange}
+						min="1"
+					/>
 					<button
 						style={{ margin: "0 auto", display: "block" }}
 						className="snipcart-add-item"
@@ -72,6 +86,7 @@ export default function Template({ data }) {
 						data-item-description={frontmatter.description}
 						data-item-image={frontmatter.thumbnail}
 						data-item-name={frontmatter.name}
+						data-item-quantity={qty}
 						data-item-custom1-name="Color"
 						data-item-custom1-options={frontmatter.colors}
 						data-item-custom1-value={selectedColor}

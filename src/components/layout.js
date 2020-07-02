@@ -5,6 +5,8 @@ import { SnipcartContext } from "gatsby-plugin-snipcart-advanced/context"
 import styled from "styled-components"
 import "./index.css"
 import cart from "../images/cart.svg"
+import { ThemeProvider } from "styled-components"
+import { standard, GlobalStyle } from "../bruin/themes"
 
 const Header = styled.header`
 	padding: 20px 35px;
@@ -54,7 +56,8 @@ const Layout = ({ children }) => {
 	const { cartQuantity } = state
 
 	return (
-		<>
+		<ThemeProvider theme={standard}>
+			<GlobalStyle />
 			<div>
 				<Header>
 					<NavContainer>
@@ -75,6 +78,9 @@ const Layout = ({ children }) => {
 							>
 								Along the Seams
 							</h1>
+							<p style={{ margin: "0", fontSize: "10px", textAlign: "center", lineHeight: "4px" }}>
+								A BASEBALL BLOG.
+							</p>
 						</Link>
 					</div>
 					<CartButton className="snipcart-checkout">
@@ -83,8 +89,9 @@ const Layout = ({ children }) => {
 					</CartButton>
 				</Header>
 				<main>{children}</main>
+				<footer style={{ padding: "50px", textAlign: "center" }}>footer</footer>
 			</div>
-		</>
+		</ThemeProvider>
 	)
 }
 
