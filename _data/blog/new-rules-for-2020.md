@@ -6,6 +6,9 @@ type: blog-post
 date: 2020-06-28T22:00:42.570Z
 title: New Rules for 2020
 tags: featured, analysis
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+  voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
+  laudantium asperiores voluptates.
 thumbnail: /assets/lesly-juarez-gnyqxi5ufii-unsplash.jpg
 ---
 
