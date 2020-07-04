@@ -4,7 +4,10 @@ path: curious-case-of-trevor-bauer
 type: blog-post
 date: 2020-05-28T12:06:50.537Z
 title: The Curious Case of Trevor Bauer
-tags: '"player profiles"'
+author: Troy Ciesco
+tags:
+  - Featured
+  - Player Profiles
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
   voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
   laudantium asperiores voluptates.
