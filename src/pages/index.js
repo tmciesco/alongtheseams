@@ -264,6 +264,7 @@ export const pageQuery = graphql`
 						slug
 						title
 						thumbnail
+						description
 					}
 				}
 			}
