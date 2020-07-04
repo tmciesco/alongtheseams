@@ -45,7 +45,9 @@ const BlogCard = ({ title, date, description, link, author, img }) => {
 				</Text>
 				<ReadMoreContainer>
 					<Link to={link}>
-						<Button level="other">Read More</Button>
+						<Button level="other" mode="info">
+							Read More
+						</Button>
 					</Link>
 				</ReadMoreContainer>
 			</ContentContainer>

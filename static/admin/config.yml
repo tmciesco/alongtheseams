@@ -17,6 +17,7 @@ collections:
       - { name: type, label: Type, widget: hidden, default: "blog-post" }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: tags, label: Tags }
       - label: Featured Image
         name: thumbnail
         widget: image

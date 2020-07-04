@@ -5,8 +5,10 @@ import { SnipcartContext } from "gatsby-plugin-snipcart-advanced/context"
 import styled from "styled-components"
 import "./index.css"
 import cart from "../images/cart.svg"
+import atsLogo from "../images/ats-logo.svg"
 import { ThemeProvider } from "styled-components"
 import { standard, GlobalStyle } from "../bruin/themes"
+import { Footer } from "./Footer"
 
 const Header = styled.header`
 	padding: 20px 35px;
@@ -68,16 +70,16 @@ const Layout = ({ children }) => {
 					</NavContainer>
 					<div>
 						<Link to="/" style={{ textDecoration: "none" }}>
-							<h1
+							<img
+								src={atsLogo}
+								alt="logo"
 								style={{
-									margin: "0",
+									display: "block",
+									margin: "0 auto",
 									padding: "0",
-									textAlign: "center",
-									color: "darkred",
+									height: "5rem",
 								}}
-							>
-								Along the Seams
-							</h1>
+							/>
 							<p style={{ margin: "0", fontSize: "10px", textAlign: "center", lineHeight: "4px" }}>
 								A BASEBALL BLOG.
 							</p>
@@ -89,7 +91,7 @@ const Layout = ({ children }) => {
 					</CartButton>
 				</Header>
 				<main>{children}</main>
-				<footer style={{ padding: "50px", textAlign: "center" }}>footer</footer>
+				<Footer />
 			</div>
 		</ThemeProvider>
 	)

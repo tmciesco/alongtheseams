@@ -48,10 +48,13 @@ const HeroContent = styled.div`
 
 const CategoryNavContainer = styled.div`
 	width: 100%;
-	background: ${(props) => props.theme["colors"]["neutral"]["s3"]};
+	height: 70px;
+	background: ${(props) => props.theme["colors"]["info"]["dark"]};
+	z-index: -1;
+	position: absolute;
 `
 const CategoryNav = styled.ul`
-	width: 50%;
+	width: 75%;
 	display: flex;
 	margin: 0 auto;
 	justify-content: space-around;
@@ -62,6 +65,7 @@ const CategoryNavItem = styled.li`
 	list-style: none;
 	cursor: pointer;
 	color: white;
+	padding: 5px;
 `
 
 const FancyHeading = styled.h3`
@@ -70,7 +74,7 @@ const FancyHeading = styled.h3`
 	margin: ${(props) => props.theme["spaces"]["hu"]} auto;
 	border-bottom: 20px solid ${(props) => props.theme["colors"]["info"]["t3"]};
 	line-height: 0.4;
-	width: 90%;
+	width: 40%;
 `
 const IndexPage = () => {
 	return (
@@ -99,16 +103,7 @@ const IndexPage = () => {
 					</Button>
 				</HeroContent>
 			</Hero>
-			<CategoryNavContainer>
-				<CategoryNav>
-					<CategoryNavItem>Featured</CategoryNavItem>
-					<CategoryNavItem>Analysis</CategoryNavItem>
-					<CategoryNavItem>Predictions</CategoryNavItem>
-					<CategoryNavItem>Research</CategoryNavItem>
-					<CategoryNavItem>What If</CategoryNavItem>
-					<CategoryNavItem>Player Profiles</CategoryNavItem>
-				</CategoryNav>
-			</CategoryNavContainer>
+			<CategoryNavContainer></CategoryNavContainer>
 			{/* possible categories: players you don't remember, games from the time capsule,
 				stories/longform narrative, pitcher analysis, batter analysis, predictions, extremes, player
 				profiles, projections, prospects, rankings, what ifs, research */}
@@ -116,6 +111,21 @@ const IndexPage = () => {
 				style={{ display: "grid", gridTemplateColumns: "75% 1fr", width: "80%", margin: "0 auto" }}
 			>
 				<div>
+					<CategoryNav>
+						<CategoryNavItem
+							style={{
+								fontWeight: "700",
+								background: "darkred",
+							}}
+						>
+							Featured
+						</CategoryNavItem>
+						<CategoryNavItem>Analysis</CategoryNavItem>
+						<CategoryNavItem>Predictions</CategoryNavItem>
+						<CategoryNavItem>Research</CategoryNavItem>
+						<CategoryNavItem>What If</CategoryNavItem>
+						<CategoryNavItem>Player Profiles</CategoryNavItem>
+					</CategoryNav>
 					<FancyHeading>Featured Posts</FancyHeading>
 					<div style={{ display: "grid", gridTemplateColumns: "1fr", gridRowGap: "50px" }}>
 						<BlogCard
@@ -176,7 +186,7 @@ const IndexPage = () => {
 						/>
 					</div>
 				</div>
-				<Box mt="hu" shade="light" style={{ borderRadius: "10px" }}>
+				<Box mt="lg" shade="light" style={{ borderRadius: "10px", alignSelf: "start" }}>
 					<div
 						style={{
 							borderRadius: "10px",
