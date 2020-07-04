@@ -4,6 +4,10 @@ path: writing-about-baseball
 type: blog-post
 date: 2020-06-10T12:03:39.116Z
 title: Writing About Baseball
+tags: Research
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+  voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
+  laudantium asperiores voluptates.
 thumbnail: /assets/joey-kyber-8ereia0u4lw-unsplash.jpg
 ---
 
