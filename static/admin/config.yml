@@ -14,7 +14,7 @@ collections:
     fields:
       - { name: slug, label: Slug }
       - { name: path, label: Path }
-      - { name: hero, label: Hero Post, widget: "boolean", default: false }
+      - { name: hero, label: Hero Post, widget: "boolean", default: false, required: false }
       - { name: type, label: Type, widget: hidden, default: "blog-post" }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
