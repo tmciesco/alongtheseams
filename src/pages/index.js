@@ -76,13 +76,15 @@ const FancyHeading = styled.h3`
 	line-height: 0.4;
 	width: 40%;
 `
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+	const posts = data.allMarkdownRemark.edges
+	const heroPost = posts.filter(({ node }) => node.frontmatter.hero === true)
 	return (
 		<Layout>
 			<SEO title="Hello" />
 			<Hero>
 				<HeroContent>
-					<Heading>On Shortened Seasons</Heading>
+					<Heading>{heroPost.title}</Heading>
 					<Heading as="h3" fontSize="xs" fontWeight="light" style={{ fontStyle: "italic" }}>
 						Kyle Ciesco
 					</Heading>
@@ -186,7 +188,7 @@ const IndexPage = () => {
 						/>
 					</div>
 				</div>
-				<Box mt="lg" shade="light" style={{ borderRadius: "10px", alignSelf: "start" }}>
+				<Box mt="md" shade="light" style={{ borderRadius: "10px", alignSelf: "start" }}>
 					<div
 						style={{
 							borderRadius: "10px",
@@ -196,7 +198,10 @@ const IndexPage = () => {
 							padding: "10px",
 						}}
 					>
-						<Heading as="h4" fontSize="ti" pb="sm">
+						<Heading as="h4" fontSize="sm" pb="sm">
+							Latest Podcast Episode
+						</Heading>
+						<Heading as="h5" fontSize="ti" pb="sm">
 							Podcast Episode #26
 						</Heading>
 						<Text pb="lg">
@@ -281,3 +286,29 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+	query {
+		site {
+			siteMetadata {
+				title
+			}
+		}
+		allMarkdownRemark(
+			filter: { frontmatter: { type: { eq: "blog-post" } } }
+			sort: { fields: [frontmatter___date], order: DESC }
+		) {
+			edges {
+				node {
+					frontmatter {
+						date(formatString: "MMMM DD, YYYY")
+						type
+						slug
+						title
+						thumbnail
+					}
+				}
+			}
+		}
+	}
+`

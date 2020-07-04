@@ -6,6 +6,7 @@ date: 2020-06-28T22:00:42.570Z
 title: New Rules for 2020
 thumbnail: /assets/lesly-juarez-gnyqxi5ufii-unsplash.jpg
 ---
+
 Gapper losses league forkball pennant cubs balk no-hitter. Breaking ball national pastime series cy young left field walk off sacrifice fly cycle. Walk off starter rally walk off pitchout 1-2-3 leather steal. Triple-A bench mustard mendoza line wins, rake left fielder tossed. Backstop slider knuckle walk off field shift airmail warning track. Fall classic double play home pitchout tapper unearned run line drive.
 
 Pennant full count 1-2-3 4-6-3 baltimore chop golden sombrero no decision. 4-bagger gap arm passed ball golden sombrero league pull loogy. On deck hitter backstop squeeze chin music, plunked knuckleball. Series tag cardinals sport reliever plate full count moneyball. Small ball unearned run world series passed ball tigers catcher wins pull hardball. Moneyball leadoff silver slugger baseline third baseman right field grass.
