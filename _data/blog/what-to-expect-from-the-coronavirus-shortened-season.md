@@ -1,6 +1,7 @@
 ---
 slug: /blog/short-season-expectations
 path: short-season-expectations
+hero: true
 type: blog-post
 date: 2020-06-28T12:05:41.191Z
 title: What to Expect from the Coronavirus-shortened Season
