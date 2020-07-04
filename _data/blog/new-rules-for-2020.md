@@ -5,7 +5,10 @@ hero: false
 type: blog-post
 date: 2020-06-28T22:00:42.570Z
 title: New Rules for 2020
-tags: featured, analysis
+author: Kyle Ciesco
+tags:
+  - Analysis
+  - Featured
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
   voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
   laudantium asperiores voluptates.
