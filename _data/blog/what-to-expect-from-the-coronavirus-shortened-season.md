@@ -5,7 +5,10 @@ hero: true
 type: blog-post
 date: 2020-06-28T12:05:41.191Z
 title: Expectations for the Coronavirus-shortened Season
-tags: analysis, featured
+author: Kyle Ciesco
+tags:
+  - Featured
+  - Analysis
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
   voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
   laudantium asperiores voluptates.
