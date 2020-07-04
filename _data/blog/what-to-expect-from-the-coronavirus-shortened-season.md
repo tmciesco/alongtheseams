@@ -4,7 +4,7 @@ path: short-season-expectations
 hero: true
 type: blog-post
 date: 2020-06-28T12:05:41.191Z
-title: What to Expect from the Coronavirus-shortened Season
+title: Expectations for the Coronavirus-shortened Season
 tags: analysis, featured
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
   voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
