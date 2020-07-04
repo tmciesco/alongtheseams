@@ -85,7 +85,7 @@ const IndexPage = ({ data }) => {
 				<HeroContent>
 					<Heading>{heroPost.title}</Heading>
 					<Heading as="h3" fontSize="xs" fontWeight="light" style={{ fontStyle: "italic" }}>
-						Kyle Ciesco
+						{heroPost.author}
 					</Heading>
 					<Text fontSize="sm" pb="md">
 						{heroPost.date}
@@ -119,6 +119,7 @@ const IndexPage = ({ data }) => {
 							style={{
 								fontWeight: "700",
 								background: "darkred",
+								borderRadius: "10px",
 							}}
 						>
 							Featured
@@ -136,7 +137,7 @@ const IndexPage = ({ data }) => {
 								<BlogCard
 									title={node.frontmatter.title}
 									description={node.frontmatter.description}
-									author="Troy Ciesco"
+									author={node.frontmatter.author}
 									date={node.frontmatter.date}
 									link={node.frontmatter.slug}
 									img={node.frontmatter.thumbnail}
@@ -263,8 +264,10 @@ export const pageQuery = graphql`
 						hero
 						slug
 						title
+						author
 						thumbnail
 						description
+						tags
 					}
 				}
 			}

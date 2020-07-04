@@ -1,3 +1,3 @@
 export const borderRadius = {
-	default: "0.4rem"
+	default: "1rem",
 }

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
+import { Heading } from "../bruin"
 
 const BlogPostContainer = styled.div``
 const TopImg = styled.div`
@@ -24,13 +25,20 @@ const BlogPost = styled.div`
 	border-radius: 10px;
 `
 
-const BlogTitle = styled.h1`
+const BlogTitle = styled(Heading)`
 	text-align: center;
 	font-size: 48px;
 `
-const BlogDate = styled.p`
+
+const BlogPostInfo = styled.p`
 	text-align: center;
+	margin-bottom: 10px;
 `
+
+const BlogAuthor = styled.span`
+	font-weight: 700;
+`
+const BlogDate = styled.span``
 
 const BlogContent = styled.div`
 	padding: 15px;
@@ -44,13 +52,37 @@ export default function Template({
 }) {
 	const { markdownRemark } = data // data.markdownRemark holds your post data
 	const { frontmatter, html } = markdownRemark
+	console.log(frontmatter)
 	return (
 		<Layout>
 			<BlogPostContainer>
 				<TopImg bgImg={frontmatter.thumbnail}>
 					<BlogPost>
 						<BlogTitle>{frontmatter.title}</BlogTitle>
-						<BlogDate>{frontmatter.date}</BlogDate>
+						<BlogPostInfo>
+							<BlogAuthor>{frontmatter.author}</BlogAuthor> -{" "}
+							<BlogDate>{frontmatter.date}</BlogDate>
+							<p style={{ marginTop: "10px", marginBottom: "10px" }}>
+								{frontmatter.tags.map((tag) => {
+									return (
+										<span
+											key={tag}
+											style={{
+												background: "lightgrey",
+												borderRadius: "10px",
+												padding: "2px 5px",
+												marginLeft: "5px",
+												fontWeight: "700",
+												textTransform: "uppercase",
+												fontSize: "12px",
+											}}
+										>
+											{tag}
+										</span>
+									)
+								})}
+							</p>
+						</BlogPostInfo>
 						<hr />
 						<BlogContent dangerouslySetInnerHTML={{ __html: html }} />
 					</BlogPost>
@@ -69,6 +101,8 @@ export const pageQuery = graphql`
 				slug
 				title
 				thumbnail
+				author
+				tags
 			}
 		}
 	}
