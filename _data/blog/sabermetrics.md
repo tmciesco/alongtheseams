@@ -4,6 +4,9 @@ path: sabermetrics
 type: blog-post
 date: 2020-06-28T12:02:38.763Z
 title: Sabermetrics
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+  voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
+  laudantium asperiores voluptates.
 thumbnail: /assets/selective-focus-of-baseball-pitcher-in-20-jersey-about-to-163487.jpg
 ---
 
