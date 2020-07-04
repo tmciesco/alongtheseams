@@ -1,6 +1,7 @@
 ---
 slug: /blog/9-good-catchers-you-dont-remember
 path: 9-good-catchers-you-dont-remember
+hero: true
 type: blog-post
 date: 2020-04-14T12:08:39.548Z
 title: Nine Good Catchers You Don't Remember
