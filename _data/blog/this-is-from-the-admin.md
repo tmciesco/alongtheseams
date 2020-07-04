@@ -4,6 +4,10 @@ path: green
 type: blog-post
 date: 2020-06-27T02:15:01.519Z
 title: This is from the admin
+tags: predictions
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+  voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
+  laudantium asperiores voluptates.
 thumbnail: /assets/glove.jpg
 ---
 
