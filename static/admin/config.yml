@@ -18,7 +18,16 @@ collections:
       - { name: type, label: Type, widget: hidden, default: "blog-post" }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
-      - { name: tags, label: Tags, required: false }
+      - { name: author, label: Author, options: ["Troy Ciesco", "Kyle Ciesco"] }
+      - {
+          name: tags,
+          label: Tags,
+          required: false,
+          widget: select,
+          multiple: true,
+          options:
+            ["Featured", "Analysis", "Research", "Predictions", "History", "Player Profiles"],
+        }
       - { name: description, label: Description, required: false }
       - label: Featured Image
         name: thumbnail
