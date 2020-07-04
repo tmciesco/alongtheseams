@@ -1,9 +1,11 @@
 ---
 slug: /blog/new-rules-for-2020
 path: new-rules-for-2020
+hero: true
 type: blog-post
 date: 2020-06-28T22:00:42.570Z
 title: New Rules for 2020
+tags: featured, analysis
 thumbnail: /assets/lesly-juarez-gnyqxi5ufii-unsplash.jpg
 ---
 
