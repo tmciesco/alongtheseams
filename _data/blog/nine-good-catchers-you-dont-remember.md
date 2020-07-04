@@ -4,6 +4,9 @@ path: 9-good-catchers-you-dont-remember
 type: blog-post
 date: 2020-04-14T12:08:39.548Z
 title: Nine Good Catchers You Don't Remember
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+  voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
+  laudantium asperiores voluptates.
 thumbnail: /assets/daiji-umemoto-f0ae-bu7sco-unsplash.jpg
 ---
 
