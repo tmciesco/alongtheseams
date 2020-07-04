@@ -1,11 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import SEO from "../components/seo"
-import baseballHero from "../images/bw-baseball.jpg"
-import attpark from "../images/attpark.jpg"
-import dodgerstadium from "../images/dodgerstadium.jpg"
-import baseballyard from "../images/baseballyard.jpg"
 import { BlogCard } from "../components/BlogCard"
 import { Heading, Text, Box, Button } from "../bruin"
 
@@ -13,7 +10,7 @@ const Hero = styled.div`
 	height: 700px;
 	width: 100%;
 	background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-		url(${dodgerstadium});
+		url(${(props) => props.srcImg});
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -78,31 +75,35 @@ const FancyHeading = styled.h3`
 `
 const IndexPage = ({ data }) => {
 	const posts = data.allMarkdownRemark.edges
-	const heroPost = posts.filter(({ node }) => node.frontmatter.hero === true)
+	const heroPostContent = posts.filter(({ node }) => node.frontmatter.hero === true)
+	const heroPost = heroPostContent[0].node.frontmatter
+	console.log(heroPost)
 	return (
 		<Layout>
 			<SEO title="Hello" />
-			<Hero>
+			<Hero srcImg={heroPost.thumbnail}>
 				<HeroContent>
 					<Heading>{heroPost.title}</Heading>
 					<Heading as="h3" fontSize="xs" fontWeight="light" style={{ fontStyle: "italic" }}>
 						Kyle Ciesco
 					</Heading>
 					<Text fontSize="sm" pb="md">
-						07/14/2020
+						{heroPost.date}
 					</Text>
-					<Text style={{ width: "50%", margin: "0 auto" }}>
-						Featured Post Description Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-						Atque modi quos sunt vitae exercitationem pariatur est dolore aspernatur nostrum
-						repellat? Praesentium impedit ducimus exercitationem asperiores!
-					</Text>
-					<Button
-						style={{ width: "250px", margin: "30px auto", fontWeight: "700", letterSpacing: "1px" }}
-						mode="info"
-						shade="s1"
-					>
-						Read More
-					</Button>
+					<Text style={{ width: "50%", margin: "0 auto" }}>{heroPost.description}</Text>
+					<Link to={`${heroPost.slug}`} style={{ margin: "30px auto" }}>
+						<Button
+							style={{
+								width: "250px",
+								fontWeight: "700",
+								letterSpacing: "1px",
+							}}
+							mode="info"
+							shade="s1"
+						>
+							Read More
+						</Button>
+					</Link>
 				</HeroContent>
 			</Hero>
 			<CategoryNavContainer></CategoryNavContainer>
@@ -130,62 +131,18 @@ const IndexPage = ({ data }) => {
 					</CategoryNav>
 					<FancyHeading>Featured Posts</FancyHeading>
 					<div style={{ display: "grid", gridTemplateColumns: "1fr", gridRowGap: "50px" }}>
-						<BlogCard
-							title="Title of the Interesting Post"
-							description="prop description"
-							author="Troy Ciesco"
-							date="06/22/2020"
-							link="/blog"
-							img={baseballHero}
-						/>
-						<BlogCard
-							title="Title of the Interesting Post"
-							description="prop description"
-							author="Troy Ciesco"
-							date="06/22/2020"
-							link="/blog"
-							img={baseballyard}
-						/>
-						<BlogCard
-							title="Title of the Interesting Post"
-							description="prop description"
-							author="Troy Ciesco"
-							date="06/22/2020"
-							link="/blog"
-							img={attpark}
-						/>
-						<BlogCard
-							title="Title of the Interesting Post"
-							description="prop description"
-							author="Troy Ciesco"
-							date="06/22/2020"
-							link="/blog"
-							img={baseballHero}
-						/>
-						<BlogCard
-							title="Title of the Interesting Post"
-							description="prop description"
-							author="Troy Ciesco"
-							date="06/22/2020"
-							link="/blog"
-							img={baseballyard}
-						/>
-						<BlogCard
-							title="Title of the Interesting Post"
-							description="prop description"
-							author="Troy Ciesco"
-							date="06/22/2020"
-							link="/blog"
-							img={attpark}
-						/>
-						<BlogCard
-							title="Title of the Interesting Post"
-							description="prop description"
-							author="Troy Ciesco"
-							date="06/22/2020"
-							link="/blog"
-							img={baseballHero}
-						/>
+						{posts.map(({ node }) => {
+							return (
+								<BlogCard
+									title={node.frontmatter.title}
+									description={node.frontmatter.description}
+									author="Troy Ciesco"
+									date={node.frontmatter.date}
+									link={node.frontmatter.slug}
+									img={node.frontmatter.thumbnail}
+								/>
+							)
+						})}
 					</div>
 				</div>
 				<Box mt="md" shade="light" style={{ borderRadius: "10px", alignSelf: "start" }}>
@@ -303,6 +260,7 @@ export const pageQuery = graphql`
 					frontmatter {
 						date(formatString: "MMMM DD, YYYY")
 						type
+						hero
 						slug
 						title
 						thumbnail

@@ -40,8 +40,7 @@ const BlogCard = ({ title, date, description, link, author, img }) => {
 					{author} - {date}
 				</Heading>
 				<Text pt="xs" pb="lg" pl="sm" pr="sm">
-					{description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste vero eligendi
-					aut optio eaque similique aspernatur provident accusantium eius minus.
+					{description}
 				</Text>
 				<ReadMoreContainer>
 					<Link to={link}>

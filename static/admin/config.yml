@@ -14,11 +14,12 @@ collections:
     fields:
       - { name: slug, label: Slug }
       - { name: path, label: Path }
-      - { label: Hero Post, name: hero, widget: "boolean", default: false }
+      - { name: hero, label: Hero Post, widget: "boolean", default: false }
       - { name: type, label: Type, widget: hidden, default: "blog-post" }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
-      - { name: tags, label: Tags }
+      - { name: tags, label: Tags, required: false }
+      - { name: description, label: Description, required: false }
       - label: Featured Image
         name: thumbnail
         widget: image
