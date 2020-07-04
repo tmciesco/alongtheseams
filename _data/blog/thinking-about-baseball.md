@@ -4,7 +4,9 @@ path: thinking-about-baseball
 type: blog-post
 date: 2020-06-18T12:04:45.202Z
 title: Thinking About Baseball
-tags: analysis
+author: Kyle Ciesco
+tags:
+  - Research
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
   voluptatem itaque. Officiis, exercitationem? In obcaecati culpa exercitationem
   laudantium asperiores voluptates.
