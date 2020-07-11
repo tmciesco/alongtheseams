@@ -7,6 +7,13 @@ const StyledBlogCard = styled.div`
 	display: flex;
 	width: 80%;
 	margin: 0 auto;
+
+	.card-img {
+		width: 350px;
+		height: inherit;
+		position: relative;
+		border-radius: 10px;
+	}
 `
 const ContentContainer = styled.div`
 	padding: 20px 20px 0 20px;
@@ -19,21 +26,10 @@ const ReadMoreContainer = styled.div`
 	align-self: flex-end;
 	margin-right: ${(props) => props.theme["spaces"]["hu"]};
 `
-
-const CardImg = styled.div`
-	width: 350px;
-	height: inherit;
-	background-image: url(${(props) => props.srcImg});
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	position: relative;
-	border-radius: 10px;
-`
 const BlogCard = ({ title, date, description, link, author, img }) => {
 	return (
 		<StyledBlogCard>
-			<CardImg srcImg={img} alt="alt text" />
+			{img}
 			<ContentContainer>
 				<Heading as="h2">{title}</Heading>
 				<Heading as="h5" fontSize="ti" pl="md" pb="sm" fontWeight="light" shade="t1">

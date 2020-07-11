@@ -2,46 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
+import { BlogCard } from "../components/BlogCard"
 
 const BlogRollContainer = styled.div`
 	width: 960px;
 	margin: 50px auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	justify-items: center;
-`
-
-const BlogCard = styled.article`
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
-	cursor: pointer;
-	border-radius: 10px;
-`
-
-const BlogCardImage = styled.div`
-	height: 250px;
-	width: 300px;
-	background-image: url(${(props) => props.srcImg});
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-	border-radius: 10px 10px 0 0;
-`
-
-const BlogCardContent = styled.div`
-	padding: 20px;
-	h3 {
-		margin: 5px;
-
-		a {
-			color: darkred;
-		}
-	}
-
-	small {
-		margin: 10px;
-		color: blue;
-	}
 `
 
 const BlogPage = ({ data }) => {
@@ -50,31 +17,25 @@ const BlogPage = ({ data }) => {
 		<Layout>
 			<SEO title="Blog" />
 			<BlogRollContainer>
-				{posts.map(({ node }) => {
-					const title = node.frontmatter.title || node.fields.slug
-					return (
-						<Link to={node.frontmatter.slug} style={{ textDecoration: "none" }}>
-							<BlogCard key={node.frontmatter.slug}>
-								<BlogCardImage srcImg={node.frontmatter.thumbnail} />
-								<BlogCardContent>
-									<h3>
-										<Link style={{ textDecoration: `none` }} to={node.frontmatter.slug}>
-											{title}
-										</Link>
-									</h3>
-									<small>{node.frontmatter.date}</small>
-								</BlogCardContent>
-								<div>
-									<p
-										dangerouslySetInnerHTML={{
-											__html: node.frontmatter.description || node.excerpt,
-										}}
+				<div style={{ display: "grid", gridTemplateColumns: "1fr", gridRowGap: "50px" }}>
+					{posts.map(({ node }) => {
+						return (
+							<BlogCard
+								title={node.frontmatter.title}
+								description={node.frontmatter.description}
+								author={node.frontmatter.author}
+								date={node.frontmatter.date}
+								link={node.frontmatter.slug}
+								img={
+									<Img
+										className="card-img"
+										fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
 									/>
-								</div>
-							</BlogCard>
-						</Link>
-					)
-				})}
+								}
+							/>
+						)
+					})}
+				</div>
 			</BlogRollContainer>
 		</Layout>
 	)
@@ -100,7 +61,14 @@ export const pageQuery = graphql`
 						type
 						slug
 						title
-						thumbnail
+						description
+						thumbnail {
+							childImageSharp {
+								fluid(maxWidth: 800) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 					}
 				}
 			}

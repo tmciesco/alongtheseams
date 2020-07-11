@@ -1,18 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import { Heading } from "../bruin"
 
-const BlogPostContainer = styled.div``
-const TopImg = styled.div`
-	height: 360px;
-	width: 100%;
-	background-image: url(${(props) => props.bgImg});
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
+const BlogPostContainer = styled.div`
+	.top-img {
+		height: 360px;
+		width: 100%;
+		position: relative;
+	}
 `
 const BlogPost = styled.div`
 	width: 850px;
@@ -56,37 +54,35 @@ export default function Template({
 	return (
 		<Layout>
 			<BlogPostContainer>
-				<TopImg bgImg={frontmatter.thumbnail}>
-					<BlogPost>
-						<BlogTitle>{frontmatter.title}</BlogTitle>
-						<BlogPostInfo>
-							<BlogAuthor>{frontmatter.author}</BlogAuthor> -{" "}
-							<BlogDate>{frontmatter.date}</BlogDate>
-							<p style={{ marginTop: "10px", marginBottom: "10px" }}>
-								{frontmatter.tags.map((tag) => {
-									return (
-										<span
-											key={tag}
-											style={{
-												background: "lightgrey",
-												borderRadius: "10px",
-												padding: "2px 5px",
-												marginLeft: "5px",
-												fontWeight: "700",
-												textTransform: "uppercase",
-												fontSize: "12px",
-											}}
-										>
-											{tag}
-										</span>
-									)
-								})}
-							</p>
-						</BlogPostInfo>
-						<hr />
-						<BlogContent dangerouslySetInnerHTML={{ __html: html }} />
-					</BlogPost>
-				</TopImg>
+				<Img className="top-img" fluid={frontmatter.thumbnail.childImageSharp.fluid} />
+				<BlogPost>
+					<BlogTitle>{frontmatter.title}</BlogTitle>
+					<BlogPostInfo>
+						<BlogAuthor>{frontmatter.author}</BlogAuthor> - <BlogDate>{frontmatter.date}</BlogDate>
+						<p style={{ marginTop: "10px", marginBottom: "10px" }}>
+							{frontmatter.tags.map((tag) => {
+								return (
+									<span
+										key={tag}
+										style={{
+											background: "lightgrey",
+											borderRadius: "10px",
+											padding: "2px 5px",
+											marginLeft: "5px",
+											fontWeight: "700",
+											textTransform: "uppercase",
+											fontSize: "12px",
+										}}
+									>
+										{tag}
+									</span>
+								)
+							})}
+						</p>
+					</BlogPostInfo>
+					<hr />
+					<BlogContent dangerouslySetInnerHTML={{ __html: html }} />
+				</BlogPost>
 			</BlogPostContainer>
 		</Layout>
 	)
@@ -100,7 +96,13 @@ export const pageQuery = graphql`
 				date(formatString: "MMMM DD, YYYY")
 				slug
 				title
-				thumbnail
+				thumbnail {
+					childImageSharp {
+						fluid(maxWidth: 800) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
 				author
 				tags
 			}

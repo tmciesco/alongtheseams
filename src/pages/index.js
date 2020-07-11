@@ -1,5 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import SEO from "../components/seo"
@@ -9,14 +10,10 @@ import { Heading, Text, Box, Button } from "../bruin"
 const Hero = styled.div`
 	height: 700px;
 	width: 100%;
-	background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-		url(${(props) => props.srcImg});
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: relative;
 
 	h1 {
 		font-size: 64px;
@@ -81,7 +78,11 @@ const IndexPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Hello" />
-			<Hero srcImg={heroPost.thumbnail}>
+			<Hero>
+				<Img
+					style={{ position: "absolute", zIndex: "-2", height: "100%", width: "100%" }}
+					fluid={heroPost.thumbnail.childImageSharp.fluid}
+				/>
 				<HeroContent>
 					<Heading>{heroPost.title}</Heading>
 					<Heading as="h3" fontSize="xs" fontWeight="light" style={{ fontStyle: "italic" }}>
@@ -140,7 +141,12 @@ const IndexPage = ({ data }) => {
 									author={node.frontmatter.author}
 									date={node.frontmatter.date}
 									link={node.frontmatter.slug}
-									img={node.frontmatter.thumbnail}
+									img={
+										<Img
+											className="card-img"
+											fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
+										/>
+									}
 								/>
 							)
 						})}
@@ -265,7 +271,13 @@ export const pageQuery = graphql`
 						slug
 						title
 						author
-						thumbnail
+						thumbnail {
+							childImageSharp {
+								fluid(maxWidth: 1200, maxHeight: 700) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 						description
 						tags
 					}

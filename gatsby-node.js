@@ -1,5 +1,9 @@
 const path = require("path")
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
+exports.onCreateNode = ({ node }) => {
+	fmImagesToRelative(node)
+}
 // Commenting out until I decide to use Printify's API directly
 // const config = require("gatsby-plugin-config").default
 // const fetch = require("node-fetch")

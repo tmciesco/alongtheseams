@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import styled from "styled-components"
 import Layout from "../components/layout"
 
@@ -7,10 +8,11 @@ const ProductContainer = styled.div`
 	padding: 20px;
 	width: 80%;
 	margin: 0 auto;
-`
-const ProductImg = styled.img`
-	height: 250px;
-	width: auto;
+
+	.product-img {
+		height: 250px;
+		width: auto;
+	}
 `
 const ProductPost = styled.div``
 
@@ -46,7 +48,11 @@ export default function Template({ data }) {
 	return (
 		<Layout>
 			<ProductContainer>
-				<ProductImg src={frontmatter.thumbnail} alt={frontmatter.name} />
+				<Img
+					className="product-img"
+					fluid={frontmatter.thumbnail.childImageSharp.fluid}
+					alt={frontmatter.name}
+				/>
 				<ProductPost>
 					<ProductTitle>{frontmatter.name}</ProductTitle>
 					<ProductDescription>{frontmatter.description}</ProductDescription>
@@ -84,7 +90,7 @@ export default function Template({ data }) {
 						data-item-price={frontmatter.price}
 						data-item-url={frontmatter.slug}
 						data-item-description={frontmatter.description}
-						data-item-image={frontmatter.thumbnail}
+						data-item-image={frontmatter.thumbnail.childImageSharp.fluid.src}
 						data-item-name={frontmatter.name}
 						data-item-quantity={qty}
 						data-item-custom1-name="Color"
@@ -111,7 +117,13 @@ export const pageQuery = graphql`
 				slug
 				name
 				price
-				thumbnail
+				thumbnail {
+					childImageSharp {
+						fluid(maxWidth: 800) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
 				colors
 				sizes
 			}

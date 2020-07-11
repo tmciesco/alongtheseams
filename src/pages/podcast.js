@@ -101,7 +101,13 @@ export const pageQuery = graphql`
 						type
 						slug
 						title
-						thumbnail
+						thumbnail {
+							childImageSharp {
+								fluid(maxWidth: 800) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 						description
 					}
 				}

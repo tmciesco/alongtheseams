@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 
 export default ({ data }) => {
 	const {
@@ -17,8 +18,8 @@ export default ({ data }) => {
 					return (
 						<div key={product.frontmatter.productID}>
 							<Link to={`${product.frontmatter.slug}`}>
-								<img
-									src={product.frontmatter.thumbnail}
+								<Img
+									fluid={product.frontmatter.thumbnail.childImageSharp.fluid}
 									alt={product.frontmatter.name}
 									style={{ height: "250px", width: "auto", margin: "0 auto", display: "block" }}
 								/>
@@ -31,7 +32,7 @@ export default ({ data }) => {
 								data-item-price={product.frontmatter.price}
 								data-item-url="/shop"
 								data-item-description={product.frontmatter.description}
-								data-item-image={product.frontmatter.thumbnail}
+								data-item-image={product.frontmatter.thumbnail.childImageSharp.fluid.src}
 								data-item-name={product.frontmatter.name}
 								data-item-custom1-name="Color"
 								data-item-custom1-options={product.frontmatter.colors}
@@ -63,7 +64,13 @@ export const pageQuery = graphql`
 						name
 						price
 						description
-						thumbnail
+						thumbnail {
+							childImageSharp {
+								fluid(maxWidth: 800) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 						colors
 						sizes
 					}
