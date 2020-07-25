@@ -31,6 +31,7 @@
 		"react-helmet": "^6.1.0",
 		"styled-components": "^5.1.1",
 		"typeface-assistant": "0.0.75",
+		"typeface-damion": "0.0.72",
 		"typeface-dm-serif-text": "^1.1.3"
 	},
 	"keywords": [

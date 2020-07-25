@@ -7,6 +7,4 @@ export const textFontFamily = {
 }
 require("typeface-dm-serif-text")
 require("typeface-assistant")
-//require("typeface-marcellus")
-//require("typeface-catamaran")
-// monospace?
+require("typeface-damion")

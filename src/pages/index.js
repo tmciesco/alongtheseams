@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -17,7 +17,6 @@ const Hero = styled.div`
 
 	h1 {
 		font-size: 64px;
-		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(0, 0, 0, 0.9);
 	}
 
 	h1,
@@ -29,12 +28,12 @@ const Hero = styled.div`
 	p {
 		color: #ffffff;
 		text-align: center;
-		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(0, 0, 0, 0.9);
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(0, 0, 0, 0.9),
+			0 7px 5px rgba(109, 30, 24, 0.8);
 	}
 `
 
 const HeroContent = styled.div`
-	background: radial-gradient(ellipse at center, rgba(109, 30, 24, 0.8) 0, rgba(0, 0, 0, 0) 70%);
 	display: flex;
 	flex-direction: column;
 	padding: 100px;
@@ -53,6 +52,12 @@ const CategoryNav = styled.ul`
 	margin: 0 auto;
 	justify-content: space-around;
 	padding: 20px;
+
+	.selected {
+		font-weight: 700;
+		background: darkred;
+		border-radius: 10px;
+	}
 `
 
 const CategoryNavItem = styled.li`
@@ -71,10 +76,15 @@ const FancyHeading = styled.h3`
 	width: 40%;
 `
 const IndexPage = ({ data }) => {
+	const [postCategory, setPostCategory] = useState("Featured")
+
+	function handleCategoryNavItemClick(category) {
+		setPostCategory(category)
+	}
+
 	const posts = data.allMarkdownRemark.edges
 	const heroPostContent = posts.filter(({ node }) => node.frontmatter.hero === true)
 	const heroPost = heroPostContent[0].node.frontmatter
-	console.log(heroPost)
 	return (
 		<Layout>
 			<SEO title="Hello" />
@@ -117,38 +127,66 @@ const IndexPage = ({ data }) => {
 				<div>
 					<CategoryNav>
 						<CategoryNavItem
-							style={{
-								fontWeight: "700",
-								background: "darkred",
-								borderRadius: "10px",
-							}}
+							className={postCategory === "Featured" ? "selected" : ""}
+							onClick={() => handleCategoryNavItemClick("Featured")}
 						>
 							Featured
 						</CategoryNavItem>
-						<CategoryNavItem>Analysis</CategoryNavItem>
-						<CategoryNavItem>Predictions</CategoryNavItem>
-						<CategoryNavItem>Research</CategoryNavItem>
-						<CategoryNavItem>What If</CategoryNavItem>
-						<CategoryNavItem>Player Profiles</CategoryNavItem>
+						<CategoryNavItem
+							className={postCategory === "Analysis" ? "selected" : ""}
+							onClick={() => handleCategoryNavItemClick("Analysis")}
+						>
+							Analysis
+						</CategoryNavItem>
+						<CategoryNavItem
+							className={postCategory === "Predictions" ? "selected" : ""}
+							onClick={() => handleCategoryNavItemClick("Predictions")}
+						>
+							Predictions
+						</CategoryNavItem>
+						<CategoryNavItem
+							className={postCategory === "Research" ? "selected" : ""}
+							onClick={() => handleCategoryNavItemClick("Research")}
+						>
+							Research
+						</CategoryNavItem>
+						<CategoryNavItem
+							className={postCategory === "What If" ? "selected" : ""}
+							onClick={() => handleCategoryNavItemClick("What If")}
+						>
+							What If
+						</CategoryNavItem>
+						<CategoryNavItem
+							className={postCategory === "Player Profiles" ? "selected" : ""}
+							onClick={() => handleCategoryNavItemClick("Player Profiles")}
+						>
+							Player Profiles
+						</CategoryNavItem>
 					</CategoryNav>
-					<FancyHeading>Featured Posts</FancyHeading>
+					<FancyHeading>
+						{postCategory}
+						{postCategory === "Featured" ? " Posts" : ""}
+					</FancyHeading>
 					<div style={{ display: "grid", gridTemplateColumns: "1fr", gridRowGap: "50px" }}>
 						{posts.map(({ node }) => {
-							return (
-								<BlogCard
-									title={node.frontmatter.title}
-									description={node.frontmatter.description}
-									author={node.frontmatter.author}
-									date={node.frontmatter.date}
-									link={node.frontmatter.slug}
-									img={
-										<Img
-											className="card-img"
-											fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
-										/>
-									}
-								/>
-							)
+							if (node.frontmatter.tags.includes(postCategory)) {
+								return (
+									<BlogCard
+										key={node.frontmatter.slug}
+										title={node.frontmatter.title}
+										description={node.frontmatter.description}
+										author={node.frontmatter.author}
+										date={node.frontmatter.date}
+										link={node.frontmatter.slug}
+										img={
+											<Img
+												className="card-img"
+												fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
+											/>
+										}
+									/>
+								)
+							}
 						})}
 					</div>
 				</div>
