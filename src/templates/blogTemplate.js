@@ -9,16 +9,14 @@ const BlogPostContainer = styled.div`
 	.top-img {
 		height: 360px;
 		width: 100%;
-		position: relative;
+		z-index: -1;
 	}
 `
 const BlogPost = styled.div`
 	width: 850px;
 	margin: 0 auto;
-	position: absolute;
+	margin-top: -150px;
 	background: #ffffff;
-	top: 250px;
-	left: calc(50% - 450px);
 	padding: 25px;
 	border-radius: 10px;
 `
